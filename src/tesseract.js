@@ -13,7 +13,7 @@ function getTesseractConfig() {
 async function main() {
   const testImagePath = path.resolve(__dirname, "../", "images", "test3.png");
 
-  console.log("Dirname: ", testImagePath);
+  console.log("Dirname ", testImagePath);
   const testImage = await fs.readFile(testImagePath);
   console.log("Test image ",testImage);
   try {
