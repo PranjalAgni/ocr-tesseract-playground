@@ -15,7 +15,7 @@ async function main() {
 
   console.log("Dirname ", testImagePath);
   const testImage = await fs.readFile(testImagePath);
-  console.log("Test image ",testImage);
+  console.log("Test image: ",testImage);
   try {
     const text = await tesseract.recognize(testImage);
     console.log("Text: ", text);
