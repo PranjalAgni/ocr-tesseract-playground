@@ -1,6 +1,6 @@
 const fs = require("fs/promises");
 const path = require("path");
-const tesseract = require("node-tesseract-ocr");
+const { recognize } = require("node-tesseract-ocr");
 
 function getTesseractConfig() {
   return {
@@ -17,7 +17,7 @@ async function main() {
   const testImage = await fs.readFile(testImagePath);
   console.log("Test image: ",testImage);
   try {
-    const text = await tesseract.recognize(testImage);
+    const text = await recognize(testImage);
     console.log("Text: ", text);
   } catch (ex) {
     console.error(ex);
